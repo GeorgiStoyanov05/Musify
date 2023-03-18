@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+
 export default function Header(){
     return (
         <div className="header_section">
         <nav className="navbar navbar-dark bg-dark">
-          <a className="logo" href="index.html">
+          <Link to={'/'} className="logo">
             <img src="images/logo.png" />
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -19,29 +21,29 @@ export default function Header(){
           <div className="collapse navbar-collapse" id="navbarsExample01">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="index.html">
+                <Link to={'/'} className="nav-link">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="about.html">
+                <Link to={'/about'} className="nav-link">
                   About
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="game.html">
+                <Link to={'/games'} className="nav-link">
                   Game
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="client.html">
+                <Link to={'/client'} className="nav-link">
                   Client
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="contact.html">
+                <Link to={'/contacts'} className="nav-link">
                   Contact Us
-                </a>
+                </Link>
               </li>
             </ul>
             <form className="form-inline my-2 my-md-0">
@@ -83,7 +85,7 @@ export default function Header(){
                       The point of using Lorem Ipsum
                     </p>
                     <div className="book_bt">
-                      <a href="#">Book Now</a>
+                      <Link to={'/404'}>Book Now</Link>
                     </div>
                   </div>
                 </div>
@@ -97,7 +99,7 @@ export default function Header(){
                       The point of using Lorem Ipsum
                     </p>
                     <div className="book_bt">
-                      <a href="#">Book Now</a>
+                      <Link to={'/404'}>Book Now</Link>
                     </div>
                   </div>
                 </div>
@@ -111,7 +113,7 @@ export default function Header(){
                       The point of using Lorem Ipsum
                     </p>
                     <div className="book_bt">
-                      <a href="#">Book Now</a>
+                    <Link to={'/404'}>Book Now</Link>
                     </div>
                   </div>
                 </div>
@@ -125,7 +127,7 @@ export default function Header(){
                       The point of using Lorem Ipsum
                     </p>
                     <div className="book_bt">
-                      <a href="#">Book Now</a>
+                    <Link to={'/404'}>Book Now</Link>
                     </div>
                   </div>
                 </div>
