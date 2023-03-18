@@ -35,11 +35,6 @@ export default function header(){
                   Game
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link to={'/contacts'} className="nav-link">
-                  Contact Us
-                </Link>
-              </li>
             </ul>
             <form className="form-inline my-2 my-md-0">
               <input

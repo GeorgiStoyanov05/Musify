@@ -35,11 +35,6 @@ export default function Header(){
                   Game
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link to={'/client'} className="nav-link">
-                  Client
-                </Link>
-              </li>
             </ul>
             <form className="form-inline my-2 my-md-0">
               <input
