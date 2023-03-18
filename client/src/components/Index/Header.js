@@ -35,6 +35,21 @@ export default function Header(){
                   Game
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link to={'/login'} className="nav-link">
+                  Login
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to={'/register'} className="nav-link">
+                  Register
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to={'/logout'} className="nav-link">
+                  Logout
+                </Link>
+              </li>
             </ul>
             <form className="form-inline my-2 my-md-0">
               <input
@@ -54,16 +69,6 @@ export default function Header(){
               className="carousel slide"
               data-ride="carousel"
             >
-              <ol className="carousel-indicators">
-                <li
-                  data-target="#carouselExampleIndicators"
-                  data-slide-to={0}
-                  className="active"
-                  />
-                <li data-target="#carouselExampleIndicators" data-slide-to={1} />
-                <li data-target="#carouselExampleIndicators" data-slide-to={2} />
-                <li data-target="#carouselExampleIndicators" data-slide-to={3} />
-              </ol>
               <div className="carousel-inner">
                 <div className="carousel-item active">
                   <div className="container">
@@ -75,49 +80,7 @@ export default function Header(){
                       The point of using Lorem Ipsum
                     </p>
                     <div className="book_bt">
-                      <Link to={'/404'}>Book Now</Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="carousel-item">
-                  <div className="container">
-                    <h4 className="banner_taital">Welcome to</h4>
-                    <h1 className="banner_taital_1">C a s i n o</h1>
-                    <p className="banner_text">
-                      It is a long established fact that a reader will be distracted
-                      by the readable content of a page when looking at its layout.
-                      The point of using Lorem Ipsum
-                    </p>
-                    <div className="book_bt">
-                      <Link to={'/404'}>Book Now</Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="carousel-item">
-                  <div className="container">
-                    <h4 className="banner_taital">Welcome to</h4>
-                    <h1 className="banner_taital_1">C a s i n o</h1>
-                    <p className="banner_text">
-                      It is a long established fact that a reader will be distracted
-                      by the readable content of a page when looking at its layout.
-                      The point of using Lorem Ipsum
-                    </p>
-                    <div className="book_bt">
-                    <Link to={'/404'}>Book Now</Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="carousel-item">
-                  <div className="container">
-                    <h4 className="banner_taital">Welcome to</h4>
-                    <h1 className="banner_taital_1">C a s i n o</h1>
-                    <p className="banner_text">
-                      It is a long established fact that a reader will be distracted
-                      by the readable content of a page when looking at its layout.
-                      The point of using Lorem Ipsum
-                    </p>
-                    <div className="book_bt">
-                    <Link to={'/404'}>Book Now</Link>
+                      <Link to={'/books'}>To our catalog</Link>
                     </div>
                   </div>
                 </div>
