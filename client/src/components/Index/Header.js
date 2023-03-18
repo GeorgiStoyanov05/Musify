@@ -31,8 +31,8 @@ export default function Header(){
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to={'/games'} className="nav-link">
-                  Game
+                <Link to={'/catalog'} className="nav-link">
+                  Books
                 </Link>
               </li>
               <li className="nav-item">
@@ -80,7 +80,7 @@ export default function Header(){
                       The point of using Lorem Ipsum
                     </p>
                     <div className="book_bt">
-                      <Link to={'/books'}>To our catalog</Link>
+                      <Link to={'/catalog'}>To our catalog</Link>
                     </div>
                   </div>
                 </div>

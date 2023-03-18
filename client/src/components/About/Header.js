@@ -26,8 +26,8 @@ export default function Header(){
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to={'/games'} className="nav-link">
-                  Game
+                <Link to={'/catalog'} className="nav-link">
+                  Books
                 </Link>
               </li>
               <li className="nav-item">
