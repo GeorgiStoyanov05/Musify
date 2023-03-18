@@ -3,7 +3,7 @@ import Index from './components/Index/Index';
 import About from './components/About/About'
 import Books from './components/Books/Books';
 import Login from './components/Login/Login';
-import Register from './Register/Register';
+import Register from './components/Register/Register';
 
 function App() {
   return (
