@@ -21,46 +21,7 @@ export default function Body(){
               </p>
             </div>
             <div className="playnow_bt active">
-              <a href="#">Play Now</a>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6">
-            <div className="image_3">
-              <h1 className="number_text_1">02</h1>
-              <h1 className="game_text_1">Game</h1>
-              <p className="many_text">
-                There are many variations of passages of Lorem Ipsum available,
-                but the{" "}
-              </p>
-            </div>
-            <div className="playnow_bt">
-              <a href="#">Play Now</a>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6">
-            <div className="image_4">
-              <h1 className="number_text_2">03</h1>
-              <h1 className="game_text_1">Game</h1>
-              <p className="many_text">
-                There are many variations of passages of Lorem Ipsum available,
-                but the{" "}
-              </p>
-            </div>
-            <div className="playnow_bt">
-              <a href="#">Play Now</a>
-            </div>
-          </div>
-          <div className="col-lg-3 col-sm-6">
-            <div className="image_5">
-              <h1 className="number_text_3">04</h1>
-              <h1 className="game_text_1">Game</h1>
-              <p className="many_text">
-                There are many variations of passages of Lorem Ipsum available,
-                but the{" "}
-              </p>
-            </div>
-            <div className="playnow_bt">
-              <a href="#">Play Now</a>
+              <a href="#">Details</a>
             </div>
           </div>
         </div>
