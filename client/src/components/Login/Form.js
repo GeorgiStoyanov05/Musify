@@ -15,14 +15,6 @@ export default function Form(){
                     <input
                       type="text"
                       className="email-bt"
-                      placeholder="Name"
-                      name="name"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      className="email-bt"
                       placeholder="Email"
                       name="Email"
                       />
@@ -35,25 +27,8 @@ export default function Form(){
                       name="password"
                       />
                   </div>
-                  <div className="mt-3">
-                      <select name="cars" className="custom-select mb-3">
-                        <option selected="">What are you?</option>
-                        <option value="reader">Reader</option>
-                        <option value="writer">Writer</option>
-                      </select>
-                  </div>
-                  <div className="form-group">
-                    <textarea
-                      className="massage-bt"
-                      placeholder="Massage"
-                      rows={5}
-                      id="comment"
-                      name="Massage"
-                      defaultValue={""}
-                      />
-                  </div>
                   <div className="send_btn">
-                    <a href="#">SEND</a>
+                    <a href="/">LOGIN</a>
                   </div>
                 </form>
                 </div>
