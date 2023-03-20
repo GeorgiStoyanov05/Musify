@@ -6,7 +6,7 @@ export default function ClientSection(){
       <div className="carousel-item active">
         <div className="container">
           <h1 className="casino_taital">
-            <img src="images/icon-1.png" />{" "}
+            {" "}
             <span>What Is Says Our Customer</span>
           </h1>
           <div className="image_7">

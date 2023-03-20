@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function About(){
     return (
         <div className="about_section layout_padding">
@@ -5,7 +7,7 @@ export default function About(){
     <div className="row">
       <div className="col-md-6">
         <h1 className="about_taital">
-          <img src="images/icon-1.png" /> <span>About our casino</span>
+          <img src="images/icon-1.png" /> <span>About our page</span>
         </h1>
         <p className="about_text">
           It is a long established fact that a reader will be distracted by
@@ -18,7 +20,7 @@ export default function About(){
           of using Lorem Ipsum
         </p>
         <div className="read_bt">
-          <a href="#">Read More</a>
+          <Link to={"/about"}>Read More</Link>
         </div>
       </div>
       <div className="col-md-6">

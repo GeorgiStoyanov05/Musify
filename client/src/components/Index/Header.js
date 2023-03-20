@@ -73,14 +73,14 @@ export default function Header(){
                 <div className="carousel-item active">
                   <div className="container">
                     <h4 className="banner_taital">Welcome to</h4>
-                    <h1 className="banner_taital_1">C a s i n o</h1>
+                    <h1 className="banner_taital_1">M u s i f y</h1>
                     <p className="banner_text">
                       It is a long established fact that a reader will be distracted
                       by the readable content of a page when looking at its layout.
                       The point of using Lorem Ipsum
                     </p>
                     <div className="book_bt">
-                      <Link to={'/catalog'}>To our catalog</Link>
+                      <Link to={'/catalog'}>To the songs</Link>
                     </div>
                   </div>
                 </div>
