@@ -252,9 +252,12 @@ button {
     background-image: url(../images/toogle-icon.png);
     width: 50px;
 }
+
 .navbar-dark .navbar-nav .nav-link {
-    color: #fff;
+    color: #000000;
+    font-size: large;
 }
+
 .banner_section {
     width: 100%;
     float: left;
@@ -1049,4 +1052,3 @@ select.custom-select::placeholder {
 .client_main {
     padding-bottom: 0px;
 }
-
