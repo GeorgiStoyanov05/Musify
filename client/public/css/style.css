@@ -763,8 +763,8 @@ button {
 #main_slider .carousel-control-next:hover,
 #main_slider .carousel-control-prev:focus,
 #main_slider .carousel-control-next:focus {
-    background: #ffffff;
-    color: #000000;
+    background: #000000;
+    color: #ffffff;
 }
 
 #main_slider a.carousel-control-next {

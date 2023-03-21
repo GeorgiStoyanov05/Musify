@@ -33,7 +33,7 @@ export default function Header(){
               </li>
               <li className="nav-item">
                 <Link to={'/catalog'} className="nav-link">
-                  Books
+                  Songs
                 </Link>
               </li>
               <li className="nav-item">
