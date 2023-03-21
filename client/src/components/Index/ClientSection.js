@@ -31,62 +31,6 @@ export default function ClientSection(){
           </p>
         </div>
       </div>
-      <div className="carousel-item">
-        <div className="container">
-          <h1 className="casino_taital">
-            <img src="images/icon-1.png" />{" "}
-            <span>What Is Says Our Customer</span>
-          </h1>
-          <div className="image_7">
-            <img src="images/img-6.png" />
-          </div>
-          <h4 className="jone_text">Jone Mark</h4>
-          <p className="ipsum_text">
-            <span className="padding_right_20">
-              <img src="images/left-quote.png" />{" "}
-            </span>{" "}
-            Lorem ipsum dolor sit amet,{" "}
-            <span className="padding_left_20">
-              <img src="images/right-quote.png" />
-            </span>
-          </p>
-          <p className="ipsum_text">
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse{" "}
-          </p>
-        </div>
-      </div>
-      <div className="carousel-item">
-        <div className="container">
-          <h1 className="casino_taital">
-            <img src="images/icon-1.png" />{" "}
-            <span>What Is Says Our Customer</span>
-          </h1>
-          <div className="image_7">
-            <img src="images/img-6.png" />
-          </div>
-          <h4 className="jone_text">Jone Mark</h4>
-          <p className="ipsum_text">
-            <span className="padding_right_20">
-              <img src="images/left-quote.png" />{" "}
-            </span>{" "}
-            Lorem ipsum dolor sit amet,{" "}
-            <span className="padding_left_20">
-              <img src="images/right-quote.png" />
-            </span>
-          </p>
-          <p className="ipsum_text">
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse{" "}
-          </p>
-        </div>
-      </div>
       <a
         className="carousel-control-prev"
         href="#main_slider"
