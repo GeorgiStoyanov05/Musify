@@ -21,7 +21,7 @@ export default function ContactUs(){
               <input
                 type="text"
                 className="email-bt"
-                placeholder="Phone Numbar"
+                placeholder="Phone Number"
                 name="Email"
                 />
             </div>
@@ -36,7 +36,7 @@ export default function ContactUs(){
             <div className="mt-3">
               <form>
                 <select name="cars" className="custom-select mb-3">
-                  <option selected="">Select Games</option>
+                  <option selected="">Select a song</option>
                   <option value="volvo">Volvo</option>
                   <option value="fiat">Fiat</option>
                   <option value="audi">Audi</option>
