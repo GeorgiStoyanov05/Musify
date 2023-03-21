@@ -3,7 +3,7 @@ export default function Body(){
     <div className="game_section layout_padding">
     <div className="container">
       <h1 className="game_taital">
-        <img src="images/icon-1.png" /> <span>All games here</span>
+        <img src="images/icon-1.png" /> <span>All songs</span>
       </h1>
       <p className="game_text">
         established fact that a reader will be distracted by the readable
