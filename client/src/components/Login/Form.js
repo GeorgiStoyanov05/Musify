@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Form(){
     return (
         
@@ -28,7 +30,7 @@ export default function Form(){
                       />
                   </div>
                   <div className="send_btn">
-                    <a href="/">LOGIN</a>
+                    <Link to={"/"}>LOGIN</Link>
                   </div>
                 </form>
                 </div>
