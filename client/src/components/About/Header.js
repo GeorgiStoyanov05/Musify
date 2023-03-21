@@ -31,6 +31,11 @@ export default function Header(){
                 </Link>
               </li>
               <li className="nav-item">
+                <Link to={'/create'} className="nav-link">
+                  Create a song
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link to={'/login'} className="nav-link">
                   Login
                 </Link>

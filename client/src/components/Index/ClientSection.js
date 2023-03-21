@@ -7,7 +7,7 @@ export default function ClientSection(){
         <div className="container">
           <h1 className="casino_taital">
             {" "}
-            <span>What Is Says Our Customer</span>
+            <span>What do our customers say?</span>
           </h1>
           <div className="image_7">
             <img src="images/img-6.png" />

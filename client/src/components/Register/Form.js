@@ -42,13 +42,6 @@ export default function Form(){
                       name="rePassword"
                       />
                   </div>
-                  <div className="mt-3">
-                      <select name="cars" className="custom-select mb-3">
-                        <option selected="">What are you?</option>
-                        <option value="reader">Reader</option>
-                        <option value="writer">Writer</option>
-                      </select>
-                  </div>
                   <div className="form-group">
                     <textarea
                       className="massage-bt"
