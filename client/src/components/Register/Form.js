@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Form(){
     return (
         <div className="contact_section layout_padding">
@@ -53,7 +55,7 @@ export default function Form(){
                       />
                   </div>
                   <div className="send_btn">
-                    <a href="/">Register</a>
+                    <Link to={"/"}>Register</Link>
                   </div>
                 </form>
                 </div>
