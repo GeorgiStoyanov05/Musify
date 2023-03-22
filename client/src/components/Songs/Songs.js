@@ -8,8 +8,6 @@ export default function Books(){
 <Header />
 <Body />
 <Footer />
-
 </>
-
-    );
+);
 }
