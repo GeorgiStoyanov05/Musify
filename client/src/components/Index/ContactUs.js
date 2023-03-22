@@ -54,7 +54,7 @@ export default function ContactUs(){
                 />
             </div>
             <div className="send_btn">
-              <a href="#">SEND</a>
+              <a href="#"  type="button">SEND</a>
             </div>
           </div>
         </div>

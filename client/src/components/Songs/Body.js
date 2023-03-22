@@ -1,5 +1,8 @@
-export default function Body(){
-    return (
+import Song from "./Song";
+
+export default function Body({songs}){
+
+  return (
     <div className="game_section layout_padding">
     <div className="container">
       <h1 className="game_taital">
@@ -11,19 +14,7 @@ export default function Body(){
       </p>
       <div className="game_section_2 layout_padding">
         <div className="row">
-          <div className="col-lg-3 col-sm-6">
-            <div className="image_2">
-              <h1 className="number_text">01</h1>
-              <h1 className="game_text_1">Game</h1>
-              <p className="many_text">
-                There are many variations of passages of Lorem Ipsum available,
-                but the{" "}
-              </p>
-            </div>
-            <div className="playnow_bt active">
-              <a href="#">Details</a>
-            </div>
-          </div>
+          {console.log(songs)}
         </div>
       </div>
     </div>

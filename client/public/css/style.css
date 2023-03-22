@@ -874,6 +874,30 @@ button {
     border-radius: 30px;
 }
 
+.send_btn input {
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-size: 17px;
+    color: #ffffff;
+    background-color: #000000;
+    padding: 10px;
+    border-radius: 30px;
+    border: 1px solid black;
+}
+
+.send_btn input:hover {
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-size: 17px;
+    color: #000000;
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 30px;
+}
+
 .custom-select {
     display: inline-block;
     width: 100%;
