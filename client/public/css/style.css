@@ -426,6 +426,19 @@ button {
     border-radius: 30px;
 }
 
+.image_0 {
+    box-sizing: border-box;
+    width: 100%;
+    float: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+    background-size: cover;
+    background-position: center center;
+    padding-bottom: 40px;
+    border-radius: 30px;
+}
+
 .number_text {
     width: 50px;
     margin: 0 auto;
