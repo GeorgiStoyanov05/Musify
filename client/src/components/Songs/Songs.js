@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 export default function Songs(){
 
-    const {songs, setSongs} = useState([])
+    const [songs, setSongs] = useState([])
   
     const baseUrl = 'http://localhost:3030/jsonstore/songs';
     

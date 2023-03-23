@@ -26,8 +26,6 @@ async function PostCreate(ob){
   })
 
   let data = await res.json();
-
-  console.log(data);
 }
 
 

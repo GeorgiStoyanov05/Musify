@@ -14,7 +14,7 @@ export default function Body({songs}){
       </p>
       <div className="game_section_2 layout_padding">
         <div className="row">
-          {console.log(songs)}
+          {songs.map(song=>(<Song key = {song._id} {...song}/>))}
         </div>
       </div>
     </div>
