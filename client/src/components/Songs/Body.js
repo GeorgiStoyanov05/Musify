@@ -14,7 +14,7 @@ export default function Body({songs}){
       </p>
       <div className="game_section_2 layout_padding">
         <div className="row">
-          {songs.map(song=>(<Song key = {song._id} {...song}/>))}
+          {songs.map((song, i)=>(<Song key = {song._id} {...song} index = {i+1}/>))}
         </div>
       </div>
     </div>

@@ -3,12 +3,13 @@ export default function Song({
     singer,
     genre,
     imageUrl,
-    description
+    description,
+    index
 }){
     return (
         <div className="col-lg-3 col-sm-6">
             <div className="image_0" style={{backgroundImage: `url(${imageUrl})`}}>
-              <h1 className="number_text">01</h1>
+              <h1 className="number_text">{index}</h1>
               <h1 className="game_text_1">{name}</h1>
               <p className="many_text">
                 {singer}
