@@ -28,14 +28,14 @@ const createContext = {
     <CreateContext.Provider value = {createContext}>
     <div className="App">
       <Routes>  
-        <Route  path='/' element = {<Index/>}/>
+        <Route path='/' element = {<Index/>}/>
         <Route path='/about' element = {<About />} />
-        <Route path='/catalog' element = {<Songs />}/>
-        <Route path='/catalog/:id' element = {<Details />}/>
-        <Route path='/create' element = {<Create/>}/>
-        <Route path='/login' element = {<Login />}/>
-        <Route path='/register' element = {<Register />}/>
-        <Route path='/logout' element = {<h1>/logout</h1>}/>
+        <Route path='/catalog' element = {<Songs />} />
+        <Route path='/catalog/:id' element={<Details />} />
+        <Route path='/create' element = {<Create/>} />
+        <Route path='/login' element = {<Login />} />
+        <Route path='/register' element = {<Register /> }/>
+        <Route path='/logout' element = {<h1>/logout</h1>} />
       </Routes>
     </div>
     </CreateContext.Provider>

@@ -9,9 +9,9 @@ export default function Details(){
 
     return(
         <>
-        <Header />
-        <SongDetails />
-        <Footer />
+            <Header />
+            <SongDetails />
+            <Footer />
         </>
     );
 }
