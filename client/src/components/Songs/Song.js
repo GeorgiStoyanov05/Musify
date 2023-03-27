@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+
 export default function Song({
     name,
     singer,
-    genre,
     imageUrl,
-    description,
-    index
+    index,
+    _id
 }){
+
     return (
         <div className="col-lg-3 col-sm-6">
             <div className="image_0" style={{backgroundImage: `url(${imageUrl})`}}>
@@ -15,8 +17,8 @@ export default function Song({
                 {singer}
               </p>
             </div>
-            <div className="playnow_bt active">
-              <a href="#">Details</a>
+            <div className="playnow_bt">
+              <Link to={`${_id}`}>Details</Link>
             </div>
           </div>
     );

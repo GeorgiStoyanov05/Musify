@@ -46,10 +46,10 @@ export default function ContactUs(){
             <div className="form-group">
               <textarea
                 className="massage-bt"
-                placeholder="Massage"
+                placeholder="Message"
                 rows={5}
                 id="comment"
-                name="Massage"
+                name="Message"
                 defaultValue={""}
                 />
             </div>
