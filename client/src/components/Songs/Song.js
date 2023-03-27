@@ -18,7 +18,7 @@ export default function Song({
               </p>
             </div>
             <div className="playnow_bt">
-              <Link to={`${_id}`}>Details</Link>
+              <Link to={`/songs/${_id}`}>Details</Link>
             </div>
           </div>
     );

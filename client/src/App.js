@@ -31,7 +31,7 @@ const createContext = {
         <Route path='/' element = {<Index/>}/>
         <Route path='/about' element = {<About />} />
         <Route path='/catalog' element = {<Songs />} />
-        <Route path='/catalog/:id' element={<Details />} />
+        <Route path='/songs/:id' element={<Details />} />
         <Route path='/create' element = {<Create/>} />
         <Route path='/login' element = {<Login />} />
         <Route path='/register' element = {<Register /> }/>
