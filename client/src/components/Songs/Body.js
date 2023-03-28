@@ -8,15 +8,23 @@ export default function Body({songs}){
       <h1 className="game_taital">
         <img src="images/icon-1.png" /> <span>All songs</span>
       </h1>
+      {songs.length!=0 
+      ?<> 
       <p className="game_text">
-        established fact that a reader will be distracted by the readable
-        content of a page when looking at its layout
+      established fact that a reader will be distracted by the readable
+      content of a page when looking at its layout
       </p>
       <div className="game_section_2 layout_padding">
-        <div className="row">
-          {songs.map((song, i)=>(<Song key = {song._id} {...song} index = {i+1}/>))}
-        </div>
+      <div className="row">
+        {songs.map((song, i)=>(<Song key = {song._id} {...song} index = {i+1}/>))}
       </div>
+      </div>
+      </>
+      :<p> 
+        <h1 className="game_taital">No songs available right now!</h1>
+      </p>
+      }
+      
     </div>
   </div>
     );
