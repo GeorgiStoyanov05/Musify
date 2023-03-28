@@ -1,4 +1,4 @@
-export default function ContactUs(){
+export default function ContactUs({songNames}){
     return(
         <div className="contact_section layout_padding">
   <div className="container">
@@ -36,11 +36,14 @@ export default function ContactUs(){
             <div className="mt-3">
               <form>
                 <select name="cars" className="custom-select mb-3">
-                  <option selected="">Select a song</option>
-                  <option value="volvo">Volvo</option>
-                  <option value="fiat">Fiat</option>
-                  <option value="audi">Audi</option>
-                </select>
+                  {songNames
+                    ?<>
+                    <option selected="">Select a song</option>
+                    {songNames.map(song=><option value={song.name}>{song.name}</option>)}
+                    </>
+                    :<option selected="">Select a song</option>
+                  }
+                  </select>
               </form>
             </div>
             <div className="form-group">
