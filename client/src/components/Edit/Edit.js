@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import Header from "./Header";
 import EditForm from "./EditForm";
 
@@ -16,8 +16,12 @@ export default function Edit(){
 
 return(
     <>
-        <Header />
-        <EditForm {...song}/>
+        {song && 
+        <>
+            <Header />
+            <EditForm {...song}/>
+            </>   
+        }
     </>
 );
 

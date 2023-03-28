@@ -42,7 +42,7 @@ export default function Footer(){
       </li>
       <li>
         <a href="#">
-          <img src="images/map-icon.png" />
+          <img src="/images/map-icon.png" />
           <span className="padding_left_15">Location</span>
         </a>
       </li>

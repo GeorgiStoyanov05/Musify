@@ -1,4 +1,4 @@
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function EditForm({ _id, 
@@ -12,13 +12,7 @@ description})
 
     const navigate = useNavigate();
 
-    const [formValues, setFormValues] = useState({
-        name: name,
-        singer: singer,
-        genre: genre,
-        imageUrl: imageUrl,
-        description: description
-    });
+    const [formValues, setFormValues] = useState({name, singer, genre, imageUrl, description});
 
     function onValuesChange(e){
         setFormValues(state=>({...state, [e.target.name]: e.target.value}))
