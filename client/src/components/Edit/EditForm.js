@@ -1,20 +1,24 @@
-import { useState} from "react";
+import { useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function EditForm({id, song}){
-
+export default function EditForm({ _id, 
+name,
+singer,
+genre,
+imageUrl,
+description})
+{
     const baseUrl = 'http://localhost:3030/jsonstore/songs/'; 
 
     const navigate = useNavigate();
 
     const [formValues, setFormValues] = useState({
-        name: `${song.name}`,
-        singer: `${song.singer}`,
-        genre: `${song.genre}`,
-        imageUrl: `${song.imageUrl}`,
-        description: `${song.description}`, 
+        name: name,
+        singer: singer,
+        genre: genre,
+        imageUrl: imageUrl,
+        description: description
     });
-
 
     function onValuesChange(e){
         setFormValues(state=>({...state, [e.target.name]: e.target.value}))
@@ -34,10 +38,12 @@ export default function EditForm({id, song}){
             description
         }
         await Edit(ob);
+
+        navigate(`/catalog`);
     }
 
     async function Edit(ob){
-        const res = await fetch(baseUrl+id, {
+        const res = await fetch(baseUrl+_id, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
@@ -45,7 +51,7 @@ export default function EditForm({id, song}){
             body: JSON.stringify(ob),
         });
         const data = await res.json();
-        navigate(`/catalog`);
+        
     }
 
     return (

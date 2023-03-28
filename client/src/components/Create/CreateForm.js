@@ -24,8 +24,6 @@ async function PostCreate(ob){
     },
     body: JSON.stringify(ob)
   })
-
-  let data = await res.json();
 }
 
 
