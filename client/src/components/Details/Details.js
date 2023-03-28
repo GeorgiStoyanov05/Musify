@@ -10,7 +10,7 @@ export default function Details(){
     return(
         <>
             <Header />
-            <SongDetails />
+            <SongDetails id = {id}/>
             <Footer />
         </>
     );

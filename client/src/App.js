@@ -6,6 +6,7 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Create from './components/Create/Create';
 import Details from './components/Details/Details'
+import Edit from './components/Edit/Edit';
 import { CreateContext } from './contexts/CreateContext';
 import { useState, useEffect } from 'react';
 
@@ -31,8 +32,9 @@ const createContext = {
         <Route path='/' element = {<Index/>}/>
         <Route path='/about' element = {<About />} />
         <Route path='/catalog' element = {<Songs />} />
-        <Route path='/songs/:id' element={<Details />} />
+        <Route path='/catalog/:id' element={<Details />} />
         <Route path='/create' element = {<Create/>} />
+        <Route path='/edit/:id' element = {<Edit />} />
         <Route path='/login' element = {<Login />} />
         <Route path='/register' element = {<Register /> }/>
         <Route path='/logout' element = {<h1>/logout</h1>} />

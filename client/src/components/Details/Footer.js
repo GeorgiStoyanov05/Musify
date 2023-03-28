@@ -36,7 +36,7 @@ export default function Footer(){
       </li>
       <li>
         <a href="#">
-          <img src="images/call-icon.png" />
+          <img src="/images/call-icon.png" />
           <span className="padding_left_15">(+71 9876543210)</span>
         </a>
       </li>
