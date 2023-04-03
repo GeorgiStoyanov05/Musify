@@ -1,6 +1,25 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export default function Form(){
+
+  const {auth, onLoginSubmit} = useContext(AuthContext);
+
+  
+  
+
+  const [formValues, setFormValues] = useState({
+    email: "",
+    password: ""
+  });
+
+  function onValueChange(e){
+    setFormValues(state=>({...state, [e.target.name]: [e.target.value]}))
+  }
+
+
+
     return (
         
         <div className="contact_section layout_padding">
@@ -12,13 +31,15 @@ export default function Form(){
             <div className="row">
               <div className="col-md-6">
                 <div className="email_text">
-                <form>
+                <form onSubmit={onLoginSubmit}>
                   <div className="form-group">
                     <input
                       type="text"
                       className="email-bt"
                       placeholder="Email"
-                      name="Email"
+                      name="email"
+                      value={formValues.email}
+                      onChange = {onValueChange}
                       />
                   </div>
                   <div className="form-group">
@@ -27,10 +48,12 @@ export default function Form(){
                       className="email-bt"
                       placeholder="Password"
                       name="password"
+                      value={formValues.password}
+                      onChange = {onValueChange}
                       />
                   </div>
                   <div className="send_btn">
-                    <Link to={"/"}>LOGIN</Link>
+                  <input type="submit" value="Login"/>
                   </div>
                 </form>
                 </div>

@@ -1,6 +1,11 @@
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export default function Header(){
+
+  const {accessToken} = useContext(AuthContext);
+
     return (
         <div className="header_section">
         <nav className="navbar navbar-dark bg-dark">
@@ -26,15 +31,31 @@ export default function Header(){
                 </Link>
               </li>
               <li className="nav-item">
+                <Link to={'/about'} className="nav-link">
+                  About
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link to={'/catalog'} className="nav-link">
                   Songs
                 </Link>
               </li>
+              {accessToken
+              ?
+              <>
               <li className="nav-item">
-                <Link to={'/create'} className="nav-link">
-                  Create a song
+              <Link to={'/create'} className="nav-link">
+                Create a song
+              </Link>
+              </li>
+              <li className="nav-item">
+                <Link to={'/logout'} className="nav-link">
+                  Logout
                 </Link>
               </li>
+              </>
+              :
+              <>
               <li className="nav-item">
                 <Link to={'/login'} className="nav-link">
                   Login
@@ -45,11 +66,8 @@ export default function Header(){
                   Register
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link to={'/logout'} className="nav-link">
-                  Logout
-                </Link>
-              </li>
+              </>
+              }   
             </ul>
             <form className="form-inline my-2 my-md-0">
               <input
@@ -57,7 +75,7 @@ export default function Header(){
                 type="text"
                 placeholder="Search"
                 aria-label="Search"
-              />
+                />
             </form>
           </div>
         </nav>

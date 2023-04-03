@@ -1,10 +1,14 @@
 import {Link} from 'react-router-dom'
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export default function Header(){
+
+  const {accessToken} = useContext(AuthContext);
+
     return (
-        <div className="header_section">
-        
-        <nav className="navbar navbar-dark bg-dark">
+        <div className="header_section">    
+       <nav className="navbar navbar-dark bg-dark">
           <Link to={'/'} className="logo">
             <img src="images/logo.png" />
           </Link>
@@ -16,7 +20,7 @@ export default function Header(){
             aria-controls="navbarsExample01"
             aria-expanded="false"
             aria-label="Toggle navigation"
-            >
+          >
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarsExample01">
@@ -36,21 +40,34 @@ export default function Header(){
                   Songs
                 </Link>
               </li>
+              {accessToken
+              ?
+              <>
               <li className="nav-item">
-                <Link to={'/create'} className="nav-link">
-                  Create a song
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to={'/login'} className="nav-link">
-                  Login
-                </Link>
+              <Link to={'/create'} className="nav-link">
+                Create a song
+              </Link>
               </li>
               <li className="nav-item">
                 <Link to={'/logout'} className="nav-link">
                   Logout
                 </Link>
               </li>
+              </>
+              :
+              <>
+              <li className="nav-item">
+                <Link to={'/login'} className="nav-link">
+                  Login
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to={'/register'} className="nav-link">
+                  Register
+                </Link>
+              </li>
+              </>
+              }   
             </ul>
             <form className="form-inline my-2 my-md-0">
               <input
