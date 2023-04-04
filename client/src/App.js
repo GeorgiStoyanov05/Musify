@@ -40,6 +40,20 @@ function App() {
       navigate('/');
   }
 
+  async function onRegisterSubmit(e){
+    e.preventDefault();
+    const baseUrl = 'http://localhost:3030/users/register';
+    const values = new FormData(e.target);
+    const {email, password, rePassword} = Object.fromEntries(values);
+    if (password===rePassword){
+
+
+
+    } else{
+      alert("Passwords don't match!");
+    }
+  }
+
 const createContext = {
   showCreate,
   setShowCreate,
@@ -48,6 +62,7 @@ const createContext = {
 
 const authContext = {
   onLoginSubmit,
+  onRegisterSubmit,
   ...auth
 }
 

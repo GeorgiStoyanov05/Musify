@@ -1,6 +1,23 @@
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
+import { useContext, useState } from "react";
 
 export default function Form(){
+
+ const {auth, onRegisterSubmit} = useContext(AuthContext);
+
+ const [formValues, setFormValues] = useState({
+  name: "",
+  email: "",
+  password: "",
+  rePassword: "",
+  bio: ""
+ })
+
+ function onFormChange(e){
+  setFormValues(state=>({...state, [e.target.name]:e.target.value}))
+ }
+
     return (
         <div className="contact_section layout_padding">
         <div className="container">
@@ -11,13 +28,15 @@ export default function Form(){
             <div className="row">
               <div className="col-md-6">
                 <div className="email_text">
-                <form>
+                <form onSubmit={onRegisterSubmit} method="POST">
                   <div className="form-group">
                     <input
                       type="text"
                       className="email-bt"
                       placeholder="Name"
                       name="name"
+                      value={formValues.name}
+                      onChange={onFormChange}
                     />
                   </div>
                   <div className="form-group">
@@ -25,7 +44,9 @@ export default function Form(){
                       type="text"
                       className="email-bt"
                       placeholder="Email"
-                      name="Email"
+                      name="email"
+                      value={formValues.email}
+                      onChange={onFormChange}
                       />
                   </div>
                   <div className="form-group">
@@ -34,6 +55,8 @@ export default function Form(){
                       className="email-bt"
                       placeholder="Password"
                       name="password"
+                      value={formValues.password}
+                      onChange={onFormChange}
                       />
                   </div>
                   <div className="form-group">
@@ -42,6 +65,8 @@ export default function Form(){
                       className="email-bt"
                       placeholder="Repeat password"
                       name="rePassword"
+                      value={formValues.rePassword}
+                      onChange={onFormChange}
                       />
                   </div>
                   <div className="form-group">
@@ -51,11 +76,12 @@ export default function Form(){
                       rows={5}
                       id="comment"
                       name="bio"
-                      defaultValue={""}
+                      value={formValues.bio}
+                      onChange={onFormChange}
                       />
                   </div>
                   <div className="send_btn">
-                    <Link to={"/"}>Register</Link>
+                  <input type="submit" value="Register"/>
                   </div>
                 </form>
                 </div>

@@ -31,7 +31,7 @@ export default function Form(){
             <div className="row">
               <div className="col-md-6">
                 <div className="email_text">
-                <form onSubmit={onLoginSubmit}>
+                <form onSubmit={onLoginSubmit} method="POST">
                   <div className="form-group">
                     <input
                       type="text"
