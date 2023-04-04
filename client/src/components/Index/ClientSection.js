@@ -17,17 +17,14 @@ export default function ClientSection(){
             <span className="padding_right_20">
               <img src="images/left-quote.png" />{" "}
             </span>{" "}
-            Lorem ipsum dolor sit amet,{" "}
+            About my Musify experience{" "}
             <span className="padding_left_20">
               <img src="images/right-quote.png" />
             </span>
           </p>
           <p className="ipsum_text">
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse{" "}
+            I had the time of my life while using Musify. Its extremely easy to use and it is also very interesting and intuitive.
+            I like the design and the integrated functionality so much! {"<3"}
           </p>
         </div>
       </div>

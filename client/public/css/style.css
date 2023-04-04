@@ -287,7 +287,7 @@ button {
 .banner_text {
     width: 81%;
     margin: 0 auto;
-    font-size: 16px;
+    font-size: 18px;
     color: #ffffff;
     text-align: center;
     padding-top: 30px;
@@ -350,7 +350,7 @@ button {
 .about_text {
     width: 100%;
     float: left;
-    font-size: 16px;
+    font-size: 20px;
     color: #010304;
     margin: 0px;
 }
@@ -771,7 +771,7 @@ button {
 .ipsum_text {
     width: 100%;
     margin: 0 auto;
-    font-size: 16px;
+    font-size: 18px;
     color: #000;
     text-align: center;
     padding-left: 0px;

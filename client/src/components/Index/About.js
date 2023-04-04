@@ -7,17 +7,10 @@ export default function About(){
     <div className="row">
       <div className="col-md-6">
         <h1 className="about_taital">
-          <img src="/images/icon-1.png" /> <span>About our page</span>
+          <img src="/images/icon-1.png" /> <span>About our app</span>
         </h1>
         <p className="about_text">
-          It is a long established fact that a reader will be distracted by
-          the readable content of a page when looking at its layout. The point
-          of using Lorem Ipsum
-        </p>
-        <p className="about_text">
-          It is a long established fact that a reader will be distracted by
-          the readable content of a page when looking at its layout. The point
-          of using Lorem Ipsum
+        With Musify, it’s easy to find the right music for every moment – on your phone, your computer, your tablet and more. There are millions of tracks on Musify. So whether you’re working out, partying or relaxing, the right music is always at your fingertips.
         </p>
         <div className="read_bt">
           <Link to={"/about"}>Read More</Link>

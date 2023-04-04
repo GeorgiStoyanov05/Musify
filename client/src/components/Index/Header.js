@@ -85,9 +85,7 @@ export default function Header(){
                     <h4 className="banner_taital">Welcome to</h4>
                     <h1 className="banner_taital_1">M u s i f y</h1>
                     <p className="banner_text">
-                      It is a long established fact that a reader will be distracted
-                      by the readable content of a page when looking at its layout.
-                      The point of using Lorem Ipsum
+                      The music streaming service of the future that aims to bring you the best user experience possible! The place which begins with you!
                     </p>
                     <div className="book_bt">
                       <Link to={'/catalog'}>To the songs</Link>
