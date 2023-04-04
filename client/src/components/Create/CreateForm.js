@@ -1,9 +1,13 @@
 import { Link, Redirect, useNavigate } from "react-router-dom";
 import { useState} from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export default function CreateForm() {
   
 const navigate = useNavigate();
+
+const {accessToken} = useContext(AuthContext);
 
 const [formValues, setFormValues] = useState({
     name: "",
@@ -14,16 +18,18 @@ const [formValues, setFormValues] = useState({
 
 });
 
-const baseUrl = 'http://localhost:3030/jsonstore/songs';
+const baseUrl = 'http://localhost:3030/data/songs';
 
 async function PostCreate(ob){
   let res = await fetch(baseUrl,{
     method: "POST",
     headers: {
-      'content-type': 'application/json'
+      'content-type': 'application/json',
+      'X-Authorization' : accessToken
     },
     body: JSON.stringify(ob)
   })
+  let data = await res.json();
 }
 
 
@@ -45,8 +51,7 @@ async function onCreateSubmit(e){
     }
 
     await PostCreate(ob);
-    
-    
+
     setFormValues({
       name: "",
       singer: "",

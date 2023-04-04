@@ -5,7 +5,7 @@ import EditForm from "./EditForm";
 
 export default function Edit(){
     const {id} = useParams();
-    const baseUrl = 'http://localhost:3030/jsonstore/songs/'; 
+    const baseUrl = 'http://localhost:3030/data/songs/'; 
 
     const [song, setSong] = useState();
     useEffect(()=>{

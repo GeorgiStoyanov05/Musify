@@ -6,22 +6,22 @@ export default function Footer(){
         <ul>
           <li>
             <a href="#">
-              <img src="images/fb-icon.png" />
+              <img src="/images/fb-icon.png" />
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="images/twitter-icon.png" />
+              <img src="/images/twitter-icon.png" />
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="images/linkedin-icon.png" />
+              <img src="/images/linkedin-icon.png" />
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="images/instagram-icon.png" />
+              <img src="/images/instagram-icon.png" />
             </a>
           </li>
         </ul>
@@ -30,19 +30,19 @@ export default function Footer(){
         <ul>
           <li>
             <a href="#">
-              <img src="images/mail-icon.png" />
+              <img src="/images/mail-icon.png" />
               <span className="padding_left_15">demo@gmail.com</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="images/call-icon.png" />
+              <img src="/images/call-icon.png" />
               <span className="padding_left_15">(+71 9876543210)</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="images/map-icon.png" />
+              <img src="/images/map-icon.png" />
               <span className="padding_left_15">Location</span>
             </a>
           </li>

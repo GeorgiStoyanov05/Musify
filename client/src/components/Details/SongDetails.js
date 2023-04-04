@@ -1,9 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export default function SongDetails({id}){
 
-    const baseUrl = 'http://localhost:3030/jsonstore/songs/'
+    const {_id, accessToken} = useContext(AuthContext);
+
+    const baseUrl = 'http://localhost:3030/data/songs/'
 
     const navigate = useNavigate();
 
@@ -15,14 +19,15 @@ export default function SongDetails({id}){
       .then(data=>setSong(data));
     }, [])
     
-   async  function onDeleteClick(e){
+   async function onDeleteClick(e){
      const res = await fetch(baseUrl+id, {
-        method: "DELETE"
+        method: "DELETE",
+        headers: {
+          'content-type': 'application/json',
+          'X-Authorization': accessToken
+        }
       })
       const data = await res.json();
-
-      console.log(data);
-
       navigate('/catalog');
     }
 
@@ -46,12 +51,17 @@ export default function SongDetails({id}){
               <div className="read_bt">
                 <Link to={'/catalog'}>Back</Link>
               </div>
+
+            {song._ownerId===_id &&
+            <>
               <div className="read_bt">
                 <Link to={`/edit/${id}`}>Edit</Link>
               </div>
               <div className="read_bt">
                 <Link onClick={onDeleteClick}>Delete</Link>
               </div>
+            </>
+            }    
             </div>
             <div className="col-md-6">
               <div>

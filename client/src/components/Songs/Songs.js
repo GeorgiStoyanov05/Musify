@@ -7,7 +7,7 @@ export default function Songs(){
 
     const [songs, setSongs] = useState([])
   
-    const baseUrl = 'http://localhost:3030/jsonstore/songs';
+    const baseUrl = 'http://localhost:3030/data/songs';
     
     useEffect(()=>{
        fetch(baseUrl)

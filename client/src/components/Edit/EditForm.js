@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export default function EditForm({ _id, 
 name,
@@ -8,7 +10,10 @@ genre,
 imageUrl,
 description})
 {
-    const baseUrl = 'http://localhost:3030/jsonstore/songs/'; 
+
+  const {accessToken} = useContext(AuthContext);
+
+    const baseUrl = 'http://localhost:3030/data/songs/'; 
 
     const navigate = useNavigate();
 
@@ -40,7 +45,8 @@ description})
         const res = await fetch(baseUrl+_id, {
             method: "PUT",
             headers: {
-                "content-type": "application/json"
+                "content-type": "application/json",
+                'X-Authorization': accessToken
             },
             body: JSON.stringify(ob),
         });

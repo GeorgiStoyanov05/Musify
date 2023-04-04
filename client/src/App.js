@@ -7,6 +7,7 @@ import Register from './components/Register/Register';
 import Create from './components/Create/Create';
 import Details from './components/Details/Details'
 import Edit from './components/Edit/Edit';
+import Logout from './components/Logout/Logout';
 import { AuthContext } from './contexts/AuthContext';
 import { CreateContext } from './contexts/CreateContext';
 import { useState } from 'react';
@@ -44,14 +45,29 @@ function App() {
     e.preventDefault();
     const baseUrl = 'http://localhost:3030/users/register';
     const values = new FormData(e.target);
-    const {email, password, rePassword} = Object.fromEntries(values);
+    const {name, email, password, rePassword, bio} = Object.fromEntries(values);
     if (password===rePassword){
 
-
+      const res = await fetch(baseUrl, {
+        method: "POST",
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify({name, email, password, bio})
+      })
+      const data = await res.json();
+      setAuth(data);
+      navigate('/');
 
     } else{
       alert("Passwords don't match!");
     }
+  }
+
+  async function onLogOut(){
+    const baseUrl = 'http://localhost:3030/users/logout'
+    const res = await fetch(baseUrl);
+    setAuth({});
   }
 
 const createContext = {
@@ -63,6 +79,7 @@ const createContext = {
 const authContext = {
   onLoginSubmit,
   onRegisterSubmit,
+  onLogOut,
   ...auth
 }
 
@@ -81,7 +98,7 @@ const authContext = {
         <Route path='/edit/:id' element = {<Edit />} />
         <Route path='/login' element = {<Login />} />
         <Route path='/register' element = {<Register /> }/>
-        <Route path='/logout' element = {<h1>/logout</h1>} />
+        <Route path='/logout' element = {<Logout />} />
       </Routes>
     </div>
     </CreateContext.Provider>
