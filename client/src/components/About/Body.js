@@ -10,14 +10,11 @@ export default function Body(){
                 <img src="images/icon-1.png" /> <span>About our app</span>
               </h1>
               <p className="about_text">
-                It is a long established fact that a reader will be distracted by
-                the readable content of a page when looking at its layout. The point
-                of using Lorem Ipsum
-              </p>
-              <p className="about_text">
-                It is a long established fact that a reader will be distracted by
-                the readable content of a page when looking at its layout. The point
-                of using Lorem Ipsum
+                Musify is a online music streaming service with the mission to make creating and exploring tracks way easier and more intuitive.
+                Started as a project in 2023, Musify is developing fast and is becoming more and more well-known among the new generation.
+                <br />
+                <br />
+                Located in Kazanlak, Bulgaria.
               </p>
               <div className="read_bt">
                 <Link to={'/'}>Go to main page</Link>
