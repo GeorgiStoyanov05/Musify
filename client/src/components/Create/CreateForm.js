@@ -41,26 +41,42 @@ async function onCreateSubmit(e){
     e.preventDefault();
     const form = new FormData(e.target);
     const {name, singer, genre, imageUrl, description} = Object.fromEntries(form); 
-    
-    let ob = {
-      name,
-      singer,
-      genre,
-      imageUrl,
-      description
+
+    let message = "";
+    let isGood = true;
+
+    if (name==='' || singer==='' || genre==='' || imageUrl==='' || description===''){
+      isGood = false;
+      message+=`All fields must be filled!\n`;
     }
-
-    await PostCreate(ob);
-
-    setFormValues({
-      name: "",
-      singer: "",
-      genre: "",
-      imageUrl: "",
-      description: "",
-  });
-
-  navigate('/catalog');
+    if (imageUrl.substring(0,8)!=="https://"){
+      isGood = false;
+      message+=`Image Url is not in the correct format!\n`;
+    }
+    
+    if (isGood){
+      let ob = {
+        name,
+        singer,
+        genre,
+        imageUrl,
+        description
+      }
+  
+      await PostCreate(ob);
+  
+      setFormValues({
+        name: "",
+        singer: "",
+        genre: "",
+        imageUrl: "",
+        description: "",
+    });
+  
+    navigate('/catalog');
+    } else {
+      alert(message);
+    }
 }
 
   return (
