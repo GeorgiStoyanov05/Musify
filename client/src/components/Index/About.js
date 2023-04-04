@@ -7,7 +7,7 @@ export default function About(){
     <div className="row">
       <div className="col-md-6">
         <h1 className="about_taital">
-          <img src="images/icon-1.png" /> <span>About our page</span>
+          <img src="/images/icon-1.png" /> <span>About our page</span>
         </h1>
         <p className="about_text">
           It is a long established fact that a reader will be distracted by
@@ -25,7 +25,7 @@ export default function About(){
       </div>
       <div className="col-md-6">
         <div>
-          <img src="images/img-1.png" className="image_1" />
+          <img src="/images/img-1.png" className="image_1" />
         </div>
       </div>
     </div>

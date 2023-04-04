@@ -10,7 +10,7 @@ export default function Header(){
     <div className="header_section">    
         <nav className="navbar navbar-dark bg-dark">
           <Link to={'/'} className="logo">
-            <img src="images/logo.png" />
+            <img src="/images/logo.png" />
           </Link>
           <button
             className="navbar-toggler"

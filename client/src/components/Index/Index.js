@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 export default function Index(){
 
-    const baseUrl = 'http://localhost:3030/jsonstore/songs'
+    const baseUrl = 'http://localhost:3030/data/songs'
 
     const [songNames, setSongNames] = useState([]);
 
