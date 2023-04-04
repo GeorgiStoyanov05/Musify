@@ -10,9 +10,19 @@ export default function Songs(){
     const baseUrl = 'http://localhost:3030/data/songs';
     
     useEffect(()=>{
-       fetch(baseUrl)
-      .then(res=>res.json())
-      .then(data=>{setSongs(Object.values(data))});
+        try{
+            fetch(baseUrl)
+            .then(res=>res.json())
+            .then(data=>{
+                if (data.code===404){
+                    throw new Error(data.message);
+                }
+                else{
+                    setSongs(Object.values(data));
+                }
+            })
+        } catch(err){
+        }
     },[])
 
     return(

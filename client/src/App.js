@@ -27,8 +27,8 @@ function App() {
   function onLoginSubmit(e){
     e.preventDefault();
     const baseUrl = 'http://localhost:3030/users/login';
-    const values = new FormData(e.target);
-    const { email, password } = Object.fromEntries(values);
+    let values = new FormData(e.target);
+    let { email, password } = Object.fromEntries(values);
         fetch(baseUrl, {
         method: "POST",
         headers: {
@@ -37,8 +37,14 @@ function App() {
         body: JSON.stringify({email, password})
       })
       .then(res=>res.json())
-      .then(data=>setAuth(data))
-      navigate('/');
+      .then(data=>{
+        if (data.code===403){
+          alert(data.message);
+        } else{
+          setAuth(data);
+          navigate('/');
+        }
+      })
   }
 
   async function onRegisterSubmit(e){
