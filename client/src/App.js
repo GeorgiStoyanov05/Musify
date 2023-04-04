@@ -17,62 +17,16 @@ function App() {
 
   const [showCreate, setShowCreate] = useState(true);
   const [auth, setAuth] = useState({});
-  const navigate = useNavigate();
+  
 
 
   function CloseCreate(){
     setShowCreate(state=>!state);
   }
 
-  function onLoginSubmit(e){
-    e.preventDefault();
-    const baseUrl = 'http://localhost:3030/users/login';
-    let values = new FormData(e.target);
-    let { email, password } = Object.fromEntries(values);
-        fetch(baseUrl, {
-        method: "POST",
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify({email, password})
-      })
-      .then(res=>res.json())
-      .then(data=>{
-        if (data.code===403){
-          alert(data.message);
-        } else{
-          setAuth(data);
-          navigate('/');
-        }
-      })
-  }
-
-  async function onRegisterSubmit(e){
-    e.preventDefault();
-    const baseUrl = 'http://localhost:3030/users/register';
-    const values = new FormData(e.target);
-    const {name, email, password, rePassword, bio} = Object.fromEntries(values);
-    if (password===rePassword){
-
-      const res = await fetch(baseUrl, {
-        method: "POST",
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify({name, email, password, bio})
-      })
-      const data = await res.json();
-      setAuth(data);
-      navigate('/');
-
-    } else{
-      alert("Passwords don't match!");
-    }
-  }
-
   async function onLogOut(){
     const baseUrl = 'http://localhost:3030/users/logout'
-    const res = await fetch(baseUrl);
+    await fetch(baseUrl);
     setAuth({});
   }
 
@@ -83,9 +37,8 @@ const createContext = {
 }
 
 const authContext = {
-  onLoginSubmit,
-  onRegisterSubmit,
   onLogOut,
+  setAuth,
   ...auth
 }
 

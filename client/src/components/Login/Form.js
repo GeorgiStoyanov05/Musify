@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Form(){
 
-  const {auth, onLoginSubmit} = useContext(AuthContext);
+  const {setAuth} = useContext(AuthContext);
 
-  
+  const navigate = useNavigate();
   
 
   const [formValues, setFormValues] = useState({
@@ -18,7 +19,32 @@ export default function Form(){
     setFormValues(state=>({...state, [e.target.name]: [e.target.value]}))
   }
 
-
+  function onLoginSubmit(e){
+    e.preventDefault();
+    const baseUrl = 'http://localhost:3030/users/login';
+    let values = new FormData(e.target);
+    let { email, password } = Object.fromEntries(values);
+        fetch(baseUrl, {
+        method: "POST",
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify({email, password})
+      })
+      .then(res=>res.json())
+      .then(data=>{
+        if (data.code===403){
+          setFormValues({
+            email: "",
+            password: ""
+          })
+          alert(data.message);
+        } else{
+          setAuth(data);
+          navigate('/');
+        }
+      })
+  }
 
     return (
         
