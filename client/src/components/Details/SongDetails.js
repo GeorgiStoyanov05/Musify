@@ -8,27 +8,67 @@ export default function SongDetails({id}){
     const {_id, accessToken} = useContext(AuthContext);
 
     const baseUrl = 'http://localhost:3030/data/songs/'
+    const likesUrl = 'http://localhost:3030/jsonstore/likes/'
 
     const navigate = useNavigate();
 
     const [song, setSong] = useState({});
+    const [likes, setLikes] = useState({
+      likedBy: []
+    });
+    const [isLiked, setIsLiked] = useState(false);
 
     useEffect(()=>{
       fetch(baseUrl+id)
       .then(res=>res.json())
-      .then(data=>setSong(data));
+      .then(data=>{setSong(data)});
+
+      
     }, [])
+
+    useEffect(()=>{
+      fetch(likesUrl+song.likesId)
+      .then(res=>res.json())
+      .then(data=>{setLikes(data)})
+    }, [song])
+
+    useEffect(()=>{
+      
+       fetch(likesUrl+song.likesId, {
+        method: 'PUT',
+        headers: {
+          "content-type" : "application/json",
+        },
+        body: JSON.stringify(likes)
+      })
+      .then(res=>res.json())
+      .then(data=>console.log(data))
+
+    }, [likes])
     
    async function onDeleteClick(e){
-     const res = await fetch(baseUrl+id, {
+        await fetch(baseUrl+id, {
         method: "DELETE",
         headers: {
           'content-type': 'application/json',
           'X-Authorization': accessToken
         }
       })
-      const data = await res.json();
       navigate('/catalog');
+    }
+
+    async function onLikeClick(){
+      setIsLiked(true);
+      let arr = likes.likedBy;
+      arr.push(_id);
+        setLikes(state=>({...state, likes: state.likes+1, likedBy: arr}));
+    }
+
+    async function onDislikeClick(){
+      setIsLiked(false);
+      let arr = likes.likedBy;
+      arr = arr.filter(id=>id!==_id);
+      setLikes(state=>({...state, likes: state.likes-1, likedBy: arr}));
     }
 
     return (
@@ -48,10 +88,24 @@ export default function SongDetails({id}){
               <p className="about_text_2">
                 Description: {song.description}
               </p>
+              <p className="about_text_2">
+                Likes: {likes.likes}
+              </p>
               <div className="read_bt">
                 <Link to={'/catalog'}>Back</Link>
               </div>
-
+              {(accessToken && song._ownerId!==_id && !likes.likedBy.includes(_id)) && 
+              <>
+                <div className="read_bt">
+                  <Link onClick={onLikeClick}>Like</Link>
+                </div>
+              </>}
+              {likes.likedBy.includes(_id) && 
+              <>
+                  <div className="read_bt">
+                    <Link onClick={onDislikeClick}>Dislike</Link>
+                  </div>
+              </>}
             {song._ownerId===_id &&
             <>
               <div className="read_bt">

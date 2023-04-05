@@ -19,6 +19,7 @@ const [formValues, setFormValues] = useState({
 });
 
 const baseUrl = 'http://localhost:3030/data/songs';
+const likesUrl = 'http://localhost:3030/jsonstore/likes';
 
 async function PostCreate(ob){
   let res = await fetch(baseUrl,{
@@ -30,6 +31,22 @@ async function PostCreate(ob){
     body: JSON.stringify(ob)
   })
   let data = await res.json();
+}
+
+async function PostLikes(){
+  let res = await fetch(likesUrl, {
+    method: "POST",
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify({
+      likes: 0,
+      likedBy: [],
+    })
+  })
+  let data = await res.json();
+
+  return data._id;
 }
 
 
@@ -55,14 +72,18 @@ async function onCreateSubmit(e){
     }
     
     if (isGood){
+
+      const likesId = await PostLikes();
+
       let ob = {
         name,
         singer,
         genre,
         imageUrl,
-        description
+        description,
+        likesId
       }
-  
+
       await PostCreate(ob);
   
       setFormValues({
