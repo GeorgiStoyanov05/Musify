@@ -1,4 +1,72 @@
-export default function ContactUs({songNames}){
+import { useState } from "react";
+
+ export default function ContactUs({songNames}){
+
+    const contactUrl = 'http://localhost:3030/jsonstore/feedback';
+
+    const [formValues, setFormValues] = useState({
+     name: "",
+     phoneNumber: "",
+     email: "",
+     song: "",
+     message: ""
+    })
+
+    function onValueChange(e){
+        setFormValues(state=>({...state, [e.target.name]: e.target.value}));
+    }
+
+    function onFormSubmit(e){
+        e.preventDefault();
+        const values = new FormData(e.target);
+        const {name, phoneNumber, email, song, message} = Object.fromEntries(values);
+        if (name && phoneNumber && email && song && message){
+            if (Array.from(email).includes('@')){
+
+                let ob = {
+                    name, 
+                    phoneNumber,
+                    email,
+                    song,
+                    message
+                }
+
+                fetch(contactUrl, {
+                    method: "POST",
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(ob)
+                })
+                .then(res=>res.json())
+                .then(data=>console.log(data))
+
+                alert("Thank you for the feedback!");
+            }
+            else{
+                alert("Invalid email format!");
+            }
+            setFormValues({
+                name: "",
+                phoneNumber: "",
+                email: "",
+                song: "",
+                message: ""
+            });
+        }
+        else {
+            alert("All fields must be filled!");
+            setFormValues({
+                name: "",
+                phoneNumber: "",
+                email: "",
+                song: "",
+                message: ""
+            });
+        }
+    }
+
+
     return(
         <div className="contact_section layout_padding">
   <div className="container">
@@ -8,13 +76,16 @@ export default function ContactUs({songNames}){
     <div className="contact_section_2">
       <div className="row">
         <div className="col-md-6">
+          <form onSubmit={onFormSubmit}>
           <div className="email_text">
             <div className="form-group">
               <input
                 type="text"
                 className="email-bt"
                 placeholder="Name"
-                name="Email"
+                name="name"
+                value={formValues.name}
+                onChange={onValueChange}
               />
             </div>
             <div className="form-group">
@@ -22,7 +93,9 @@ export default function ContactUs({songNames}){
                 type="text"
                 className="email-bt"
                 placeholder="Phone Number"
-                name="Email"
+                name="phoneNumber"
+                value={formValues.phoneNumber}
+                onChange={onValueChange}
                 />
             </div>
             <div className="form-group">
@@ -30,21 +103,21 @@ export default function ContactUs({songNames}){
                 type="text"
                 className="email-bt"
                 placeholder="Email"
-                name="Email"
+                name="email"
+                value={formValues.email}
+                onChange={onValueChange}
                 />
             </div>
             <div className="mt-3">
-              <form>
-                <select name="cars" className="custom-select mb-3">
+                <select name="song" className="custom-select mb-3">
                   {songNames
                     ?<>
                     <option selected="">Select a song</option>
-                    {songNames.map(song=><option value={song.name}>{song.name}</option>)}
+                    {songNames.map(song=><option key = {song._id} value={song.name}>{song.name}</option>)}
                     </>
                     :<option selected="">Select a song</option>
                   }
                   </select>
-              </form>
             </div>
             <div className="form-group">
               <textarea
@@ -52,14 +125,16 @@ export default function ContactUs({songNames}){
                 placeholder="Message"
                 rows={5}
                 id="comment"
-                name="Message"
-                defaultValue={""}
+                name="message"
+                value={formValues.message}
+                onChange={onValueChange}
                 />
             </div>
             <div className="send_btn">
-              <a href="#"  type="button">SEND</a>
+                  <input type="submit" value="Send"/>
             </div>
           </div>
+          </form>
         </div>
         <div className="col-md-6">
           <div className="map_main">
