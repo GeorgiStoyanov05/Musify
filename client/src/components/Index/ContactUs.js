@@ -71,7 +71,7 @@ import { useState } from "react";
         <div className="contact_section layout_padding">
   <div className="container">
     <h1 className="touch_taital">
-      <img src="images/icon-1.png" /> <span>Get In touch</span>
+      <img src="images/icon-1.png" /> <span>Give feedback!</span>
     </h1>
     <div className="contact_section_2">
       <div className="row">
