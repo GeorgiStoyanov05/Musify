@@ -10,13 +10,13 @@ There is a section for feedback where after submitting your feedback, it will be
 
 
 # To start the app
-OPEN TERMINAL
-cd server
+OPEN TERMINAL,
+cd server,
 node server.js
 
-OPEN ANOTHER TERMINAL WITHOUT CLOSING THE OTHER ONE
-cd client
-npm i
+OPEN ANOTHER TERMINAL WITHOUT CLOSING THE OTHER ONE,
+cd client,
+npm i,
 npm start
 
 # Credits
