@@ -10,6 +10,7 @@ import Edit from './components/Edit/Edit';
 import Logout from './components/Logout/Logout';
 import { AuthContext } from './contexts/AuthContext';
 import { useState } from 'react';
+import WrongPath from './components/404/404';
 
 function App() {
 
@@ -41,7 +42,7 @@ const authContext = {
         <Route path='/login' element = {<Login />} />
         <Route path='/register' element = {<Register /> }/>
         <Route path='/logout' element = {<Logout />} />
-        <Route  path='*' element = {<h1>404</h1>} />
+        <Route  path='*' element = {<WrongPath />} />
       </Routes>
     </div>
     </AuthContext.Provider>

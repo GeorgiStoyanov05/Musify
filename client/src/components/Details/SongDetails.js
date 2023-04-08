@@ -22,8 +22,6 @@ export default function SongDetails({id}){
       fetch(baseUrl+id)
       .then(res=>res.json())
       .then(data=>{setSong(data)});
-
-      
     }, [])
 
     useEffect(()=>{
