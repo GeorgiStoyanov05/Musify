@@ -42,6 +42,7 @@ import { useState } from "react";
                 .then(data=>console.log(data))
 
                 alert("Thank you for the feedback!");
+                window.location.reload();
             }
             else{
                 alert("Invalid email format!");
@@ -53,6 +54,7 @@ import { useState } from "react";
                 song: "",
                 message: ""
             });
+
         }
         else {
             alert("All fields must be filled!");

@@ -11,8 +11,7 @@ export default function Body({songs}){
       {songs.length!=0 
       ?<> 
       <p className="game_text">
-      established fact that a reader will be distracted by the readable
-      content of a page when looking at its layout
+      Our users' choices of songs:
       </p>
       <div className="game_section_2 layout_padding">
       <div className="row">

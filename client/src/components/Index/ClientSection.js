@@ -1,18 +1,7 @@
 import { useEffect, useState } from "react";
 import Client from "./Client";
 
-export default function ClientSection(){
-
-  const[messages, setMessages] = useState([]);
-
-  const baseUrl = 'http://localhost:3030/jsonstore/feedback';
-
-  useEffect(()=>{
-    fetch(baseUrl)
-    .then(res=>res.json())
-    .then(data=>setMessages(Object.values(data)))
-  }, [])
-
+export default function ClientSection({messages}){
 
     return (
         <div className="client_section layout_padding">
