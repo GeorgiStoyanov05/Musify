@@ -9,20 +9,12 @@ import Details from './components/Details/Details'
 import Edit from './components/Edit/Edit';
 import Logout from './components/Logout/Logout';
 import { AuthContext } from './contexts/AuthContext';
-import { CreateContext } from './contexts/CreateContext';
 import { useState } from 'react';
-import { useNavigate } from "react-router-dom";
 
 function App() {
 
-  const [showCreate, setShowCreate] = useState(true);
   const [auth, setAuth] = useState({});
   
-
-
-  function CloseCreate(){
-    setShowCreate(state=>!state);
-  }
 
   async function onLogOut(){
     const baseUrl = 'http://localhost:3030/users/logout'
@@ -30,23 +22,14 @@ function App() {
     setAuth({});
   }
 
-const createContext = {
-  showCreate,
-  setShowCreate,
-  CloseCreate
-}
-
 const authContext = {
   onLogOut,
   setAuth,
   ...auth
 }
 
-
-
   return (
     <AuthContext.Provider value = {authContext}>
-    <CreateContext.Provider value = {createContext}>
     <div className="App">
       <Routes>  
         <Route path='/' element = {<Index/>}/>
@@ -58,9 +41,9 @@ const authContext = {
         <Route path='/login' element = {<Login />} />
         <Route path='/register' element = {<Register /> }/>
         <Route path='/logout' element = {<Logout />} />
+        <Route  path='*' element = {<h1>404</h1>} />
       </Routes>
     </div>
-    </CreateContext.Provider>
     </AuthContext.Provider>
   );
 }
