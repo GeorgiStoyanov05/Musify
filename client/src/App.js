@@ -16,12 +16,11 @@ function App() {
 
   const [auth, setAuth] = useState({});
   
-
   async function onLogOut(){
-    const baseUrl = 'http://localhost:3030/users/logout'
-    await fetch(baseUrl);
-    setAuth({});
-  }
+      const baseUrl = 'http://localhost:3030/users/logout'
+        await fetch(baseUrl);
+        setAuth({});
+      }
 
 const authContext = {
   onLogOut,

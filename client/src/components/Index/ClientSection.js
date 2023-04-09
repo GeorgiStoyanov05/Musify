@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Client from "./Client";
 
 export default function ClientSection({messages}){
