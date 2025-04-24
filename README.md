@@ -13,6 +13,10 @@ This web application serves as an open media platform for music enthusiasts. Use
 - **Feedback Carousel**: Submit feedback that's showcased on the homepage in a carousel format.
 - **Static Page**: An "About Us" page providing information about the platform.
 
+## Live Demo
+
+Check out the live application here: [[(https://musify1.netlify.app/)](https://musify1.netlify.app/)]
+
 ## Technologies Used
 
 - **Frontend**: React.js, SCSS, HTML
